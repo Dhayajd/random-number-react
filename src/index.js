@@ -1,17 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { useState } from "react"
+import ReactDOM from "react-dom/client"
+import Counter from "./counter"
+import Random from "./random"
+import Formname from "./Form"
+import Twoinput from "./twoinput"
+import Add from "./Addnum"
+import Twocomp from "./twocomp"
+import List from "./list.jsx"
+import  Color from "./color.jsx"
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root=ReactDOM.createRoot(document.getElementById("root"))
+function Changename(){
+  var [myname,nwname]=useState("Dhaya")
+  function changename(){
+    nwname("Dhayananth")
+  }
+  return(
+    <div>
+      <h1>{myname}</h1>
+      <button onClick={changename} >Change</button>
+    </div>
+  )
+}
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  <div>
+    <List/>
+   <Changename/>
+   <Counter/>
+   <Random/>
+   <Formname/>
+   <Twoinput/>
+   <Add/>
+   <Twocomp/>
+   <Color/>
+  </div>
+)
